@@ -1,0 +1,10 @@
+.tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.tab {
+    flex: 1 0 180px;
+}

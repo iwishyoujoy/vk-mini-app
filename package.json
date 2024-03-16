@@ -12,16 +12,20 @@
     "deploy": "vite build && vk-miniapps-deploy"
   },
   "dependencies": {
-    "@vkontakte/icons": "^2.92.0",
+    "@hookform/resolvers": "^3.3.4",
+    "@vkontakte/icons": "^2.103.0",
     "@vkontakte/vk-bridge": "^2.13.0",
     "@vkontakte/vk-bridge-react": "^1.0.1",
     "@vkontakte/vk-mini-apps-router": "^1.4.2",
     "@vkontakte/vk-tunnel": "^0.1.4",
     "@vkontakte/vkui": "^6.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@tanstack/react-query": "^5.28.4",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
