@@ -59,7 +59,7 @@ export const AgeContent: React.FC<IAgeContentProps> = (props) => {
             <Group className={cn(styles.container, styles.placeholder)}>
                 <div className={styles.error}>
                     <Icon28ErrorCircleOutline height={30} width={30} fill="#2688eb"/>
-                    <Text>{error.message} Попробуйте перезагрузить страницу или запросить факт еще раз</Text>
+                    <Text>{error.message} Попробуйте перезагрузить страницу</Text>
                 </div>
             </Group>
         )
