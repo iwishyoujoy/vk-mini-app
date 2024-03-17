@@ -65,7 +65,7 @@ export const FactContent: React.FC<IFactContentProps> = (props) => {
             className={styles.container}
         >
             <Text className={styles.label}>Интересный факт про котиков</Text>
-            <Textarea className={styles.textarea} rows={3} defaultValue={data?.fact}/>
+            <Textarea className={styles.textarea} rows={4} defaultValue={data?.fact}/>
             <Button className={styles.button} size='l' onClick={handleButtonClick}>Получить новый факт</Button>
         </Group>
     )

@@ -1,0 +1,41 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.placeholder {
+    height: 207px;
+}
+
+.label {
+    align-self: flex-start;
+    color: #626d7a;
+}
+
+.input {
+    width: 100%;
+    padding: 8px 0;
+}
+
+.inputField{
+    background-color: #f2f3f5;
+    border: 1px solid #d4d4d4;
+    height: 36px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 20px;
+    transition: 0.2s ease;
+    padding: 0 10px;
+}
+
+.inputField:hover, .inputField:active, .inputField:focus {
+    border-color: #c2c2c2;
+}
+
+.button {
+    padding: 8px 0;
+}

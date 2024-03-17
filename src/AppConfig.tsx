@@ -20,8 +20,7 @@ export const AppConfig = () => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 0,
-        gcTime: 0
+        staleTime: 0
       },
     }
   });
