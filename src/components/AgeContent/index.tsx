@@ -1,7 +1,6 @@
-import { Button, FormItem, Group, Spinner, Text } from "@vkontakte/vkui"
-import React, { useState, useEffect } from "react";
+import { Button, FormItem, Group, Spinner, Text, useAppearance } from "@vkontakte/vkui"
+import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import bridge, { UserInfo } from '@vkontakte/vk-bridge';
 import cn from 'classnames';
 
 import styles from './styles.module.css';
@@ -22,13 +21,12 @@ export const AgeContent: React.FC<IAgeContentProps> = (props) => {
     const { ariaLabelledby, id } = props;
     const [refetchCounter, setRefetchCounter] = useState(0);
     const [name, setName] = useState('');
-    const [user, setUser] = useState<UserInfo | undefined>();
-
     const { register, handleSubmit } = useForm<IFormInput>();
     const { isLoading, isError, data, error, refetch } = useQuery({ 
         queryKey: ['age', name, refetchCounter], 
         queryFn: () => fetchAge(name), 
     });
+    const theme = useAppearance();
 
     async function fetchAge(name: string): Promise<IAge | null> {
         if (!name) {
@@ -42,19 +40,10 @@ export const AgeContent: React.FC<IAgeContentProps> = (props) => {
         return data;
     }
 
-    useEffect(() => {
-        async function fetchData() {
-          const user = await bridge.send('VKWebAppGetUserInfo');
-          setUser(user);
-        }
-        fetchData();
-      }, []);
-
     const onSubmit: SubmitHandler<IFormInput> = (inputData) => {
         setRefetchCounter(refetchCounter + 1);
         setName(inputData.name);
         refetch();
-        console.log(data);
     }
 
     if (isLoading) {
@@ -83,10 +72,10 @@ export const AgeContent: React.FC<IAgeContentProps> = (props) => {
         >
             <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
                 <FormItem top="Ваше имя (латинскими буквами)" htmlFor="text" className={styles.input}>
-                    <input defaultValue={user?.first_name ?? name} className={styles.inputField} {...register("name")}/>
+                    <input defaultValue={name} className={cn(styles.inputField, theme === 'light' ? styles.light : styles.dark)} {...register("name")}/>
                 </FormItem>
                 <FormItem top="Ваш возраст" htmlFor="number" className={styles.input}>
-                    <input defaultValue={data?.age} placeholder="Узнайте свой возраст прямо сейчас!" className={styles.inputField}/>
+                    <input defaultValue={data?.age} placeholder="Узнайте свой возраст прямо сейчас!" className={cn(styles.inputField, theme === 'light' ? styles.light : styles.dark)}/>
                 </FormItem>
                 <FormItem className={styles.button}>
                     <Button type="submit" size="l">Хочу узнать свой возраст!</Button>

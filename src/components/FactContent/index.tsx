@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { Group, Textarea, Button, Text, Spinner } from "@vkontakte/vkui";
+import { Group, Textarea, Button, Text, Spinner, usePlatform } from "@vkontakte/vkui";
 import React, { useState } from "react";
+import cn from 'classnames';
 
 import { IFact } from "../../types/fact";
 
@@ -12,11 +13,10 @@ interface IFactContentProps {
     ariaLabelledby: string;
 }
 
-// TODO: доделать выставление курсора после первого слова
-
 export const FactContent: React.FC<IFactContentProps> = (props) => {
     const { ariaLabelledby, id } = props;
     const [refetchCounter, setRefetchCounter] = useState(0);
+    const platform = usePlatform();
 
     const { isLoading, isError, data, error, refetch } = useQuery({ 
         queryKey: ['fact', refetchCounter], 
@@ -65,7 +65,7 @@ export const FactContent: React.FC<IFactContentProps> = (props) => {
             className={styles.container}
         >
             <Text className={styles.label}>Интересный факт про котиков</Text>
-            <Textarea className={styles.textarea} rows={4} defaultValue={data?.fact}/>
+            <Textarea className={styles.textarea} rows={10} defaultValue={data?.fact}/>
             <Button className={styles.button} size='l' onClick={handleButtonClick}>Получить новый факт</Button>
         </Group>
     )

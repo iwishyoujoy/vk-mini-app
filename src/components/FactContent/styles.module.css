@@ -5,7 +5,14 @@
     justify-content: space-between;
     row-gap: 10px;
     padding: 12px !important;
-    height: 160px;
+    height: auto;
+    height: 272px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: 312px;
+    }
 }
 
 .label {

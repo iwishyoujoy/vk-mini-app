@@ -8,3 +8,9 @@
 .tab {
     flex: 1 0 180px;
 }
+
+@media (max-width: 768px) {
+    .tab {
+        flex: 1 0 160px;
+    }
+}

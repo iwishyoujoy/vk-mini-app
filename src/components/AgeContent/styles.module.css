@@ -1,13 +1,13 @@
 .container {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 12px;
 }
 
 .placeholder {
-    height: 207px;
+    height: 211px;
 }
 
 .label {
@@ -21,10 +21,8 @@
 }
 
 .inputField{
-    background-color: #f2f3f5;
-    border: 1px solid #d4d4d4;
     height: 36px;
-    width: 100%;
+    width: calc(100% - 24px);
     border-radius: 8px;
     font-size: 15px;
     line-height: 20px;
@@ -32,8 +30,24 @@
     padding: 0 10px;
 }
 
-.inputField:hover, .inputField:active, .inputField:focus {
-    border-color: #c2c2c2;
+.light {
+    background-color: #f2f3f5;
+    border: 1px solid #d4d4d4;
+    color: black;
+}
+
+.dark {
+    background-color: #232324;
+    border: 1px solid  #2c2c2d;
+    color: white;
+}
+
+.light:hover, .light:active, .light:focus {
+    border: 1px solid #c2c2c2;
+}
+
+.light:hover, .light:active, .light:focus {
+    border: 1px solid #3c5e7c;
 }
 
 .button {
