@@ -22,10 +22,10 @@
 ![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/09d2a6eb-b666-44cf-aa04-6281fd320a20)
 ![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/471d5170-9ef4-4813-a101-2bf950f3ecb5)
 ### Мобильное устройство
-![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/befc6194-08d8-4e3d-9d70-604d23023f03)
-![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/7e64cfee-8f5d-41a7-88f3-56852309d564)
+![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/1de35b4e-2aad-470e-b3ef-55acac861e90)
+![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/8960e39f-c770-4016-8363-721d440906bd)
 ### Темная тема
 ![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/6da7d9ea-fd07-4466-ac73-2fbb404f2793)
 ![image](https://github.com/iwishyoujoy/vk-mini-app/assets/92114723/083c6d4d-eaff-49fe-8808-307af65b32fd)
 
-UPD: Возможны проблемы с получением предсказания возраста - странные ответы сервера.
+UPD: Возможны проблемы с получением предсказания возраста - сервер ограничивает общее количество запросов из одной сети. Попробуйте включить VPN
