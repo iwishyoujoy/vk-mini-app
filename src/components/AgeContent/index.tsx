@@ -19,19 +19,21 @@ interface IFormInput {
 
 export const AgeContent: React.FC<IAgeContentProps> = (props) => {
     const { ariaLabelledby, id } = props;
-    const [refetchCounter, setRefetchCounter] = useState(0);
     const [name, setName] = useState('');
+    const theme = useAppearance();
+
     const { register, handleSubmit } = useForm<IFormInput>();
     const { isLoading, isError, data, error, refetch } = useQuery({ 
-        queryKey: ['age', name, refetchCounter], 
-        queryFn: () => fetchAge(name), 
+        queryKey: ['age', name], 
+        queryFn: () => fetchAge(name),
+        enabled: false,
     });
-    const theme = useAppearance();
 
     async function fetchAge(name: string): Promise<IAge | null> {
         if (!name) {
             return null;
         }
+
         const response = await fetch(`https://api.agify.io/?name=${name}`);
         if (!response.ok) {
             throw new Error('Ошибка при получении данных с сервера.');
@@ -41,7 +43,6 @@ export const AgeContent: React.FC<IAgeContentProps> = (props) => {
     }
 
     const onSubmit: SubmitHandler<IFormInput> = (inputData) => {
-        setRefetchCounter(refetchCounter + 1);
         setName(inputData.name);
         refetch();
     }
